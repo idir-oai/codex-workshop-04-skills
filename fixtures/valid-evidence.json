@@ -1,0 +1,6 @@
+{
+  "command": "npm test",
+  "exitCode": 0,
+  "changedFiles": ["src/example.mjs"],
+  "summary": "The synthetic example passed its focused test."
+}

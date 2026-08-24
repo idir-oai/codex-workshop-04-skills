@@ -1,0 +1,6 @@
+interface:
+  display_name: "Evidence Bundle"
+  short_description: "Validate concise change evidence"
+  default_prompt: "Use $evidence-bundle to validate my workshop evidence."
+policy:
+  allow_implicit_invocation: true
