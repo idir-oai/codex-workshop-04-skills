@@ -1,16 +1,16 @@
 ---
 name: evidence-bundle
-description: Create or validate a concise JSON evidence bundle after a code change. Use when a user asks to record commands, exit codes, changed files, and a result summary for workshop work.
+description: Build a reviewer-ready engineering handoff from observed change and validation records. Use after implementation is complete; do not use for plans, progress updates, or unverified completion claims.
 ---
 
 # Evidence bundle
 
-Use `references/schema.md` for the required fields.
+Read `references/evidence-contract.md`. Use `assets/handoff-template.md` as the output structure.
 
-1. Record only commands that were actually run.
-2. Record each real exit code.
-3. List only files changed for the task.
-4. Write a one-sentence result summary.
-5. Run `node scripts/check-evidence.mjs <file>` before presenting the bundle.
+1. Confirm the underlying change is complete or explicitly blocked.
+2. Read the observed run record. Never invent commands, output, or exit codes.
+3. Require one positive check and one negative or boundary check.
+4. Run `node scripts/build-evidence.mjs <run-record.json>`.
+5. Return the rendered handoff and identify any residual risk.
 
-Never add secrets, customer data, tokens, or invented evidence.
+Stop when required evidence is missing. This skill packages evidence; it does not create proof retroactively.

@@ -1,6 +1,9 @@
 {
-  "name": "codex-workshop-skill-example",
+  "name": "release-policy-evidence-skill",
   "private": true,
   "type": "module",
-  "scripts": { "test": "node --test" }
+  "scripts": {
+    "test": "node --test",
+    "evidence": "node .agents/skills/evidence-bundle/scripts/build-evidence.mjs artifacts/run-record.json"
+  }
 }

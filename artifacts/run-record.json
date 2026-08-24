@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "outcome": "Approval policy now reports every missing release check in one decision.",
+  "changes": [
+    { "file": "src/release-policy.mjs", "symbols": ["evaluateRelease"] },
+    { "file": "test/release-policy.test.mjs", "symbols": ["reports all blockers", "accepts complete evidence"] }
+  ],
+  "checks": [
+    { "kind": "positive", "command": "node --test test/release-policy.test.mjs", "exitCode": 0, "output": "2 tests passed" },
+    { "kind": "boundary", "command": "node --test test/evidence.test.mjs", "exitCode": 0, "output": "incomplete run records are rejected" }
+  ],
+  "risk": "The policy is demonstrated with in-memory synthetic records; transport mapping is outside this change.",
+  "rollback": "Revert src/release-policy.mjs and test/release-policy.test.mjs together.",
+  "nextAction": "Review blocker ordering and confirm the API can expose the full array."
+}
